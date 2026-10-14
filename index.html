@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Уборка квартир и частных домов в Иваново: поддерживающая, генеральная и после ремонта. Цены, условия, оплата и возврат.">
+<title>Уборка квартир в Иваново — ИП Чинь Тхи Нинь</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Rubik:wght@400;500;600&display=swap">
+<style>
+/* Layout: rounded hero card, three price cards side by side, extras list, steps, terms, requisites */
+:root{
+  --bg:#EEF2F8; --card:#FFFFFF; --ink:#1B2440; --muted:#556080; --line:#D5DCEA;
+  --accent:#3557D6; --accent-ink:#FFFFFF; --sun:#F6C945; --sun-ink:#3A2E00; --soft:#E2E8F7;
+  --f-display:"Comfortaa","Rubik",system-ui,sans-serif; --f-body:"Rubik","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#11162A; --card:#1A2140; --ink:#E6EBF8; --muted:#A3AECB; --line:#2C3557;
+  --accent:#7D98FF; --accent-ink:#0E1430; --sun:#F2CD5C; --sun-ink:#2C2300; --soft:#232C52; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.wrap{max-width:960px;margin:0 auto;padding-inline:18px;padding-block:20px 56px;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{margin:0;font-family:var(--f-display);text-wrap:balance}
+h1{font-size:clamp(2rem,6.5vw,3.4rem);line-height:1.1}
+h2{font-size:clamp(1.35rem,4vw,1.8rem)}
+h3{font-size:1.15rem}
+p{margin:0}
+.hero{background:var(--accent);color:var(--accent-ink);border-radius:28px;padding:clamp(24px,5vw,48px);display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--sun);opacity:.9}
+.hero > *{position:relative;z-index:1}
+.tag{display:inline-block;align-self:flex-start;background:var(--sun);color:var(--sun-ink);font-weight:600;font-size:.85rem;padding:6px 12px;border-radius:999px}
+.hero p{font-size:1.1rem;max-width:56ch;opacity:.92}
+.btn{display:inline-block;align-self:flex-start;background:var(--card);color:var(--ink);font-weight:600;text-decoration:none;padding:14px 24px;border-radius:999px}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+section{display:flex;flex-direction:column;gap:18px}
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.pcard{background:var(--card);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.pcard p{color:var(--muted);font-size:.93rem}
+.pcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.pcard li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.pcard li b{font-family:var(--f-display);font-size:1.12rem;white-space:nowrap}
+.pcard.hot{outline:3px solid var(--sun)}
+.note{color:var(--muted);font-size:.95rem}
+.note b{color:var(--ink);white-space:nowrap}
+.extras{background:var(--card);border-radius:22px;padding:8px 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}
+@media (max-width:620px){.extras{grid-template-columns:1fr}}
+.extras div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.extras b{white-space:nowrap;font-variant-numeric:tabular-nums}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.fact{background:var(--soft);border-radius:18px;padding:16px 18px}
+.fact span{display:block;font-size:.8rem;color:var(--muted)}
+.fact b{font-size:1.05rem}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+ol.steps li{counter-increment:s;background:var(--card);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:6px}
+ol.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sun);color:var(--sun-ink);font-family:var(--f-display);font-weight:700}
+.text{display:flex;flex-direction:column;gap:10px;max-width:70ch}
+.text ul,.text ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+details{background:var(--card);border-radius:18px;padding:16px 20px}
+details summary{cursor:pointer;font-weight:600}
+details[open] summary{margin-bottom:12px}
+.req{background:var(--card);border-radius:22px;padding:20px 22px;margin:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 22px;font-variant-numeric:tabular-nums}
+.req dt{color:var(--muted)}
+.req dd{margin:0;overflow-wrap:anywhere}
+footer{color:var(--muted);font-size:.9rem;text-align:center}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <span class="tag">Уборка в Иваново</span>
+    <h1>Чистая квартира без забот</h1>
+    <p>Поддерживающая, генеральная и уборка после ремонта. Приезжаем со своими средствами и инвентарём, стоимость согласуем до начала работы.</p>
+    <a class="btn" href="mailto:alexdanko98@gmail.com?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D1%83">Записаться на уборку</a>
+  </header>
+
+  <section id="ceny">
+    <h2>Услуги и цены</h2>
+    <div class="prices">
+      <div class="pcard">
+        <h3>Поддерживающая</h3>
+        <p>Пыль, полы, зеркала, санузел, кухня снаружи, вынос мусора</p>
+        <ul><li><span>Студия / 1-к, до 40 м²</span><b>2 900 ₽</b></li><li><span>2-комн., до 60 м²</span><b>3 900 ₽</b></li><li><span>3-комн., до 80 м²</span><b>4 900 ₽</b></li></ul>
+      </div>
+      <div class="pcard hot">
+        <h3>Генеральная</h3>
+        <p>Всё из поддерживающей, плюс плинтусы, двери, батареи, кафель, фасады мебели и техники</p>
+        <ul><li><span>Студия / 1-к, до 40 м²</span><b>5 900 ₽</b></li><li><span>2-комн., до 60 м²</span><b>7 900 ₽</b></li><li><span>3-комн., до 80 м²</span><b>9 900 ₽</b></li></ul>
+      </div>
+      <div class="pcard">
+        <h3>После ремонта</h3>
+        <p>Строительная пыль, следы краски, затирки и клея, мытьё всех поверхностей</p>
+        <ul><li><span>Студия / 1-к, до 40 м²</span><b>7 500 ₽</b></li><li><span>2-комн., до 60 м²</span><b>9 900 ₽</b></li><li><span>3-комн., до 80 м²</span><b>13 500 ₽</b></li></ul>
+      </div>
+    </div>
+    <p class="note">Больше 80 м² или частный дом — по площади: поддерживающая <b>75 ₽/м²</b>, генеральная <b>140 ₽/м²</b>, после ремонта <b>175 ₽/м²</b>.</p>
+
+    <h3>Дополнительные услуги</h3>
+    <div class="extras">
+      <div><span>Окно, 1 створка с двух сторон</span><b>400 ₽</b></div>
+      <div><span>Холодильник внутри</span><b>900 ₽</b></div>
+      <div><span>Балконная дверь</span><b>550 ₽</b></div>
+      <div><span>Духовка внутри</span><b>900 ₽</b></div>
+      <div><span>Москитная сетка</span><b>300 ₽</b></div>
+      <div><span>Микроволновка внутри</span><b>450 ₽</b></div>
+      <div><span>Балкон или лоджия</span><b>1 000 ₽</b></div>
+      <div><span>Кухонные шкафы внутри</span><b>1 100 ₽</b></div>
+      <div><span>Люстра</span><b>550 ₽</b></div>
+      <div><span>Глажка белья</span><b>550 ₽/час</b></div>
+      <div><span>Шкаф-купе внутри</span><b>800 ₽</b></div>
+      <div><span>Мытьё посуды</span><b>500 ₽/час</b></div>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><span>Минимальный заказ</span><b>2 900 ₽</b></div>
+      <div class="fact"><span>Выезд</span><b>По Иванову бесплатно</b></div>
+      <div class="fact"><span>Время работы</span><b>Ежедневно, 10:00–18:00</b></div>
+      <div class="fact"><span>Оплата</span><b>После уборки</b></div>
+    </div>
+  </section>
+
+  <section id="zakaz">
+    <h2>Как заказать</h2>
+    <ol class="steps">
+      <li><h3>Заявка</h3><p>Напишите на почту: адрес, площадь, вид уборки и телефон для связи.</p></li>
+      <li><h3>Стоимость</h3><p>Называем точную цену и согласуем дату и время.</p></li>
+      <li><h3>Уборка</h3><p>Приезжаем в назначенное время со всем необходимым.</p></li>
+      <li><h3>Оплата</h3><p>Вы принимаете работу и оплачиваете, получая документ об оплате.</p></li>
+    </ol>
+  </section>
+
+  <section id="oplata">
+    <h2>Оплата и возврат</h2>
+    <div class="text">
+      <p>Оплата производится после выполнения работ наличными или безналичным переводом. При каждой оплате выдаётся документ, подтверждающий расчёт.</p>
+      <p><b>Возврат денежных средств:</b></p>
+      <ul>
+        <li>Если вы отменили заказ не позднее чем за 24 часа до уборки или уборка не состоялась по нашей вине, внесённая предоплата возвращается полностью.</li>
+        <li>Если вы не довольны качеством, сообщите в течение 24 часов после уборки: мы бесплатно устраним недочёты или вернём часть стоимости по договорённости.</li>
+        <li>Деньги возвращаются тем же способом, которым была произведена оплата, в течение 10 дней с даты обращения.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="dokumenty">
+    <h2>Документы</h2>
+    <details>
+      <summary>Публичная оферта на оказание услуг по уборке</summary>
+      <div class="text">
+        <p>Индивидуальный предприниматель Чинь Тхи Нинь (ИНН 370656228763, ОГРНИП 326370000026819), далее — Исполнитель, предлагает любому физическому или юридическому лицу, далее — Заказчик, заключить договор на оказание услуг по уборке жилых помещений на условиях ниже.</p>
+        <ol>
+          <li><b>Предмет.</b> Исполнитель оказывает услуги по уборке помещения Заказчика, а Заказчик принимает и оплачивает их. Перечень работ определяется видом уборки и дополнительными услугами, выбранными Заказчиком.</li>
+          <li><b>Стоимость.</b> Цены указаны на этой странице в рублях, НДС не облагаются. Итоговая стоимость согласуется с Заказчиком до начала работ и после этого не меняется, если Заказчик не добавил услуги.</li>
+          <li><b>Порядок оказания.</b> Дата, время и адрес согласуются по электронной почте. Заказчик обеспечивает доступ в помещение, воду и электричество.</li>
+          <li><b>Оплата.</b> Оплата производится после выполнения работ наличными или безналичным переводом. Заказчик получает документ, подтверждающий расчёт.</li>
+          <li><b>Приёмка и претензии.</b> Работы считаются принятыми, если Заказчик не заявил претензий в течение 24 часов после уборки. Обоснованные недочёты устраняются бесплатно.</li>
+          <li><b>Отмена и возврат.</b> Порядок отмены и возврата денежных средств указан в разделе «Оплата и возврат».</li>
+          <li><b>Ответственность.</b> Исполнитель отвечает за сохранность имущества Заказчика при оказании услуг. Споры решаются путём переговоров, а при недостижении согласия — в порядке, установленном законодательством РФ.</li>
+          <li><b>Акцепт.</b> Оформление заявки или оплата услуг означает согласие Заказчика с условиями настоящей оферты.</li>
+        </ol>
+      </div>
+    </details>
+    <details>
+      <summary>Политика обработки персональных данных</summary>
+      <div class="text">
+        <p>Исполнитель обрабатывает только данные, которые Заказчик сообщает сам при заказе: имя, номер телефона, адрес уборки и e-mail. Данные используются только для выполнения заказа, не передаются третьим лицам, кроме случаев, предусмотренных законом, и хранятся не дольше, чем это необходимо. Обработка ведётся в соответствии с Федеральным законом № 152-ФЗ «О персональных данных». Чтобы удалить свои данные, напишите на электронную почту, указанную ниже.</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="kontakty">
+    <h2>Контакты и реквизиты</h2>
+    <dl class="req">
+      <dt>Исполнитель</dt><dd>Индивидуальный предприниматель Чинь Тхи Нинь</dd>
+      <dt>ИНН</dt><dd>370656228763</dd>
+      <dt>ОГРНИП</dt><dd>326370000026819</dd>
+      <dt>Город</dt><dd>Иваново, Ивановская область</dd>
+      <dt>E-mail</dt><dd>alexdanko98@gmail.com</dd>
+      <dt>Режим работы</dt><dd>Ежедневно, 10:00–18:00</dd>
+    </dl>
+  </section>
+
+  <footer>© 2026 ИП Чинь Тхи Нинь · Уборка квартир и частных домов в Иваново</footer>
+</div>
+</body>
+</html>
